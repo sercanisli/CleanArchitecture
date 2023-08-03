@@ -12,8 +12,7 @@ namespace WebAPI.Middlewares
         public int StatusCode { get; set; }
         public override string ToString()
         {
-            return JsonConvert.SerializeObject(this); //JsonConvert kullanmak için Newtonsoft.Json kütüphanesini kullanmak gerekli
-
+            return JsonConvert.SerializeObject(this);
         }
     }
 

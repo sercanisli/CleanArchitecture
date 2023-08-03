@@ -21,7 +21,7 @@ namespace Application.Features.CarFeatures.Commands.CreateCar
         public async Task<MessageResponse> Handle(CreateCarCommand request, CancellationToken cancellationToken)
         {
             await _carService.CreateAsync(request,cancellationToken);
-            return new("Car created.");
+            return new("Car added.");
         }
     }
 }

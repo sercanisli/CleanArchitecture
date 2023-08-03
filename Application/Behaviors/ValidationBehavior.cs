@@ -9,7 +9,8 @@ using MediatR;
 
 namespace Application.Behaviors
 {
-    public class ValidationBehavior<TRequest, TResponse> : IPipelineBehavior<TRequest, TResponse> where TRequest : class, IRequest<TResponse>
+    public class ValidationBehavior<TRequest, TResponse> : IPipelineBehavior<TRequest, TResponse> 
+        where TRequest : class, IRequest<TResponse>
     {
         private readonly IEnumerable<IValidator<TRequest>> _validators;
 

@@ -8,5 +8,5 @@ using MediatR;
 
 namespace Application.Features.CarFeatures.Commands.CreateCar
 {
-    public record CreateCarCommand(string Name, string Model, int EnginePower) : IRequest<MessageResponse>; //ben hangi değeri alacağım request olarak.
+    public record CreateCarCommand(string Name, string Model, int EnginePower) : IRequest<MessageResponse>; 
 }

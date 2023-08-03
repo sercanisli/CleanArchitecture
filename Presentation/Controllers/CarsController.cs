@@ -4,7 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Application.Features.CarFeatures.Commands.CreateCar;
+using Application.Features.CarFeatures.Quaries.GetAllCar;
 using Domain.DTOs;
+using Domain.Entities;
+using EntityFrameworkCorePagination.Nuget.Pagination;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using Presentation.Abstraction;
@@ -21,6 +24,13 @@ namespace Presentation.Controllers
         public async Task<IActionResult> Create(CreateCarCommand request, CancellationToken cancellationToken)
         {
             MessageResponse response = await _mediator.Send(request, cancellationToken);
+            return Ok(response);
+        }
+
+        [HttpPost("[action]")]
+        public async Task<IActionResult> GetAll(GetAllCarQuery request, CancellationToken cancellationToken)
+        {
+            PaginationResult<Car> response = await _mediator.Send(request, cancellationToken);
             return Ok(response);
         }
     }

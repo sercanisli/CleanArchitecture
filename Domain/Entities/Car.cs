@@ -12,6 +12,5 @@ namespace Domain.Entities
         public string Name { get; set; }
         public string Model { get; set; }
         public int EnginePower { get; set; }
-
     }
 }
