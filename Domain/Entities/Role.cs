@@ -7,14 +7,11 @@ using Microsoft.AspNetCore.Identity;
 
 namespace Domain.Entities
 {
-    public class User : IdentityUser<string>
+    public class Role : IdentityRole<string>
     {
-        public User()
+        public Role()
         {
             Id = Guid.NewGuid().ToString();
         }
-        public string LastName { get; set; }
-        public string RefreshToken { get; set; }
-        public DateTime? RefreshTokenExpiresDate { get; set; }
     }
 }
